@@ -1,0 +1,28 @@
+﻿@page
+@model MyList.Pages.NickNames.IndexModel
+@{
+}
+
+<br>
+<h2>List of my dog's nicknames</h2>
+<a class="btn btn-primary btn-sm" href="/NickNames/Create"> New nickname</a>
+<table class="table">
+    <thread>
+        <tr>
+            <th>ID</th>
+            <th>NickName</th>
+        </tr>
+    </thread>
+       <tbody>
+           @foreach(var item in Model.listInfo){
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nickname</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/NickNames/Edit?id=@item.id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/NickNames/Delete?id=@item.id">Delete</a>
+                </td>
+            </tr>
+           }
+       </tbody>
+</table>
